@@ -1,0 +1,28 @@
+{
+    "name": "itwmw/generate-openapi",
+    "description": "新版微擎表单验证",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "虞灪",
+            "email": "995645888@qq.com"
+        }
+    ],
+    "keywords": [
+        "itwmw",
+        "openapi",
+        "generate-openapi"
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "mustangostang/spyc": "^0.6.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "Itwmw\\Generate\\OpenApi\\": "src/"
+        }
+    }
+}
