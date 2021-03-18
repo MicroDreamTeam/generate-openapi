@@ -9,6 +9,8 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Link;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Response;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
+use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
+use Itwmw\Generate\OpenApi\Core\Support\ToArray;
 
 /**
  * Holds a set of reusable objects for different aspects of the OAS.
@@ -19,23 +21,25 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
  * All the fixed fields declared above are objects that MUST use keys that match the regular expression: ^[a-zA-Z0-9\.\-_]+$.
  * @package Itwmw\Generate\OpenApi\Core\Definition\Info
  */
-class Components
+class Components implements Arrayable
 {
+    use ToArray;
+
     /**
      * An object to hold reusable {@see Schema} Objects.
      *
      * Map[string, {@see Schema} ¦ {@see Reference}]
      * @var array
      */
-    public array $schemas;
+    public array $schemas = [];
 
     /**
      * An object to hold reusable {@see Response} Objects.
      *
-     * 	Map[string, {@see Response} ¦ {@see Reference}]
+     * Map[string, {@see Response} ¦ {@see Reference}]
      * @var array
      */
-    public array $responses;
+    public array $responses = [];
 
     /**
      * An object to hold reusable {@see Parameter} Objects.
@@ -43,7 +47,7 @@ class Components
      * Map[string, {@see Parameter} ¦ {@see Reference}]
      * @var array
      */
-    public array $parameters;
+    public array $parameters = [];
 
     /**
      * An object to hold reusable {@see Example} Objects.
@@ -51,7 +55,7 @@ class Components
      * Map[string, {@see Example} ¦ {@see Reference}]
      * @var array
      */
-    public array $examples;
+    public array $examples = [];
 
     /**
      * An object to hold reusable {@see RequestBody} Objects.
@@ -59,7 +63,7 @@ class Components
      * Map[string, {@see RequestBody} ¦ {@see Reference}]
      * @var array
      */
-    public array $requestBodies;
+    public array $requestBodies = [];
 
     /**
      * An object to hold reusable {@see Header} Objects.
@@ -67,7 +71,7 @@ class Components
      * Map[string, {@see Header} ¦ {@see Reference}]
      * @var array
      */
-    public array $headers;
+    public array $headers = [];
 
     /**
      * An object to hold reusable {@see SecurityRequirement} Objects.
@@ -75,7 +79,7 @@ class Components
      * Map[string, {@see SecurityRequirement} ¦ {@see Reference}]
      * @var array
      */
-    public array $securitySchemes;
+    public array $securitySchemes = [];
 
     /**
      * An object to hold reusable {@see Link} Objects.
@@ -83,7 +87,7 @@ class Components
      * Map[string, {@see Link} ¦ {@see Reference}]
      * @var array
      */
-    public array $links;
+    public array $links = [];
 
     /**
      * An object to hold reusable {@see Callback} Objects.
@@ -91,5 +95,5 @@ class Components
      * Map[string, {@see Callback} ¦ {@see Reference}]
      * @var array
      */
-    public array $callbacks;
+    public array $callbacks = [];
 }

@@ -41,7 +41,7 @@ final class MediaTypes implements Arrayable
      * Map[ string, Example Object ¦ Reference Object]
      * @var array
      */
-    public array $examples;
+    public array $examples = [];
 
     /**
      * A map between a property name and its encoding information.
@@ -51,7 +51,7 @@ final class MediaTypes implements Arrayable
      * Map[string, {@see Encoding}]
      * @var array
      */
-    public array $encoding;
+    public array $encoding = [];
 
     const TEXT = 'text/plain';
 

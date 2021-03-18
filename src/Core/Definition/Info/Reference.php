@@ -21,6 +21,11 @@ class Reference implements Arrayable
      */
     public string $ref;
 
+    public function __construct(string $ref)
+    {
+        $this->ref = $ref;
+    }
+
     public function toArray(): array
     {
         return empty($this->ref) ? [] : ['$ref' => $this->ref];

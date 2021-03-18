@@ -53,7 +53,7 @@ class Link implements Arrayable
      * Map[string, Any ¦ {expression}]
      * @var array
      */
-    public array $parameters;
+    public array $parameters = [];
 
     /**
      * A literal value or {expression} to use as a request body when calling the target operation.

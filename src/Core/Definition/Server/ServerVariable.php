@@ -17,7 +17,7 @@ class ServerVariable implements Arrayable
      * An enumeration of string values to be used if the substitution options are from a limited set. The array MUST NOT be empty.
      * @var array
      */
-    public array $enum;
+    public array $enum = [];
 
     /**
      * REQUIRED. The default value to use for substitution, which SHALL be sent if an alternate value is not supplied.

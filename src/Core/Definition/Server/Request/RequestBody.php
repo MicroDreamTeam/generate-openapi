@@ -30,7 +30,7 @@ class RequestBody implements Arrayable
      * Map[string, {@see MediaTypes}]
      * @var array
      */
-    public array $content;
+    public array $content = [];
 
     /**
      * Determines if the request body is required in the request. Defaults to false.

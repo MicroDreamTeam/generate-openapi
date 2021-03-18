@@ -26,7 +26,7 @@ class Operation implements Arrayable
      * A list of tags for API documentation control. Tags can be used for logical grouping of operations by resources or any other qualifier.
      * @var string[]
      */
-    public array $tags;
+    public array $tags = [];
 
     /**
      * A short summary of what the operation does.
@@ -62,7 +62,7 @@ class Operation implements Arrayable
      * The list can use the Reference Object to link to parameters that are defined at the OpenAPI Object’s components/parameters.
      * @var Parameter[]|Reference[]
      */
-    public array $parameters;
+    public array $parameters = [];
 
     /**
      * The request body applicable for this operation.
@@ -90,7 +90,7 @@ class Operation implements Arrayable
      * Map[string, {@see Callback} ¦ {@see Reference}]
      * @var array
      */
-    public array $callbacks;
+    public array $callbacks = [];
 
     /**
      * Declares this operation to be deprecated. Consumers SHOULD refrain from usage of the declared operation.
@@ -107,7 +107,7 @@ class Operation implements Arrayable
      * To remove a top-level security declaration, an empty array can be used.
      * @var SecurityRequirement[]
      */
-    public array $security;
+    public array $security = [];
 
     /**
      * An alternative server array to service this operation.
@@ -115,5 +115,5 @@ class Operation implements Arrayable
      * it will be overridden by this value.
      * @var Server[]
      */
-    public array $servers;
+    public array $servers = [];
 }

@@ -35,7 +35,7 @@ class Encoding implements Arrayable
      * Map[string, {@see Header} ¦ {@see Reference} ]
      * @var array
      */
-    public array $headers;
+    public array $headers = [];
 
     /**
      * Describes how a specific property value will be serialized depending on its type.

@@ -29,7 +29,7 @@ class Response implements Arrayable
      * Map[string, {@see Header} ¦ {@see Reference}]
      * @var array
      */
-    public array $headers;
+    public array $headers = [];
 
     /**
      * A map containing descriptions of potential response payloads.
@@ -39,7 +39,7 @@ class Response implements Arrayable
      * Map[string, {@see MediaTypes}]
      * @var array
      */
-    public array $content;
+    public array $content = [];
 
     /**
      * A map of operations links that can be followed from the response. T
@@ -49,5 +49,5 @@ class Response implements Arrayable
      * Map[string, {@see Link}¦ {@see Reference}]
      * @var array
      */
-    public array $links;
+    public array $links = [];
 }

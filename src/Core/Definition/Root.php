@@ -64,7 +64,7 @@ class Root implements Arrayable
      * REQUIRED. The available paths and operations for the API.
      * @var Path[]
      */
-    public array $paths;
+    public array $paths = [];
 
     /**
      * A declaration of which security mechanisms can be used for this operation.
@@ -74,7 +74,7 @@ class Root implements Arrayable
      * To remove a top-level security declaration, an empty array can be used.
      * @var SecurityRequirement[]
      */
-    public array $security;
+    public array $security = [];
 
     /**
      * A list of tags used by the specification with additional metadata.
@@ -84,7 +84,7 @@ class Root implements Arrayable
      * Each tag name in the list MUST be unique.
      * @var array
      */
-    public array $tags;
+    public array $tags = [];
 
     /**
      * Additional external documentation.
@@ -101,10 +101,16 @@ class Root implements Arrayable
         return $data;
     }
 
+    public function dumpYamlToFile(string $path): bool
+    {
+        if (file_put_contents($path, $this->toYaml())) {
+            return true;
+        }
+        return false;
+    }
+
     public function toYaml(): string
     {
-        $yaml = Spyc::YAMLDump($this->toArray());
-        file_put_contents('1.txt', $yaml);
-        return $yaml;
+        return Spyc::YAMLDump($this->toArray());
     }
 }

@@ -93,7 +93,7 @@ class PathItem implements Arrayable
      * An alternative server array to service all operations in this path.
      * @var Server[]
      */
-    public array $servers;
+    public array $servers = [];
 
     /**
      * A list of parameters that are applicable for all the operations described under this path.
@@ -103,7 +103,7 @@ class PathItem implements Arrayable
      * The list can use the Reference Object to link to parameters that are defined at the OpenAPI Object’s components/parameters.
      * @var Parameter[]|Reference[]
      */
-    public array $parameters;
+    public array $parameters = [];
 
     public function toArray(): array
     {

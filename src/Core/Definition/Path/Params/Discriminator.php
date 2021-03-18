@@ -34,5 +34,5 @@ class Discriminator implements Arrayable
      * Map[string, string]
      * @var array
      */
-    public array $mapping;
+    public array $mapping = [];
 }

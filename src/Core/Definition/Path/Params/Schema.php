@@ -61,7 +61,7 @@ class Schema implements Arrayable
     /**
      * This MAY be used only on properties schemas. It has no effect on root schemas.
      * Adds additional metadata to describe the XML representation of this property.
-     * @var xml
+     * @var Xml
      */
     public Xml $xml;
 
@@ -80,7 +80,7 @@ class Schema implements Arrayable
      * Please do not place objects inside arrays
      * @var array
      */
-    public array $example;
+    public array $example = [];
 
     /**
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
@@ -94,19 +94,11 @@ class Schema implements Arrayable
 
     const INTEGER = 'integer';
 
-    const NULL = 'null';
-
     const NUMBER = 'number';
 
     const OBJECT = 'object';
 
     const STRING = 'string';
-
-    /** @var string */
-    public string $id;
-
-    /** @var string */
-    public string $schema;
 
     /** @var string */
     public string $title;
@@ -173,22 +165,22 @@ class Schema implements Arrayable
     public $additionalProperties;
 
     /** @var Schema[] */
-    public array $definitions;
+    public array $definitions = [];
 
     /**
      * MAP[field,{@see Schema}]
      * @var array
      */
-    public array $properties;
+    public array $properties = [];
 
     /** @var Schema[] */
-    public array $patternProperties;
+    public array $patternProperties = [];
 
     /** @var Schema[]|string[][]|array[] */
-    public array $dependencies;
+    public array $dependencies = [];
 
     /** @var array */
-    public array $enum;
+    public array $enum = [];
 
     /**
      * Value MUST be a string. Multiple types via an array are not supported.
@@ -203,25 +195,25 @@ class Schema implements Arrayable
      *  Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
      * @var Schema[]|array|Reference[]
      */
-    public array $allOf;
+    public array $allOf = [];
 
     /**
      *  Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
      * @var Schema[]|array|Reference[]
      */
-    public array $anyOf;
+    public array $anyOf = [];
 
     /**
      * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
      * @var Schema[]|array|Reference[]
      */
-    public array $oneOf;
+    public array $oneOf = [];
 
     /**
      * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
      * @var Schema[]|array|Reference[]
      */
-    public array $not;
+    public array $not = [];
 
     // draft6
     /** @var Schema */

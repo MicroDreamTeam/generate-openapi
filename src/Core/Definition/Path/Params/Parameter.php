@@ -120,5 +120,5 @@ class Parameter implements Arrayable
      * Map[ string, Example Object ¦ Reference Object]
      * @var array
      */
-    public array $examples;
+    public array $examples = [];
 }
