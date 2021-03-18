@@ -1,6 +1,6 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\Generate\OpenApi\Builder\Common;
 
 use Itwmw\Generate\OpenApi\Core\Definition\Info\DataTypeContainers;
 
@@ -31,6 +31,16 @@ class DataType
     {
         return new DataTypeContainers('integer', 'int32');
     }
+
+    public static function array(): DataTypeContainers
+	{
+		return new DataTypeContainers('array');
+	}
+
+	public static function object(): DataTypeContainers
+	{
+		return new DataTypeContainers('object');
+	}
 
     /**
      * signed 64 bits (a.k.a long)
