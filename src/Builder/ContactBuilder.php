@@ -10,6 +10,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Info\Contact;
  * @method $this name(string $name);
  * @method $this url(string $url);
  * @method $this email(string $email);
+ * @method Contact getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class ContactBuilder extends BaseBuilder

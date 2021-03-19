@@ -28,6 +28,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method $this deprecated(bool $deprecated);
  * @method $this security(SecurityRequirement[] $security);
  * @method $this servers(Server[] $servers);
+ * @method Operation getSubject();
  * @package Itwmw\Generate\OpenApi\Builder\Operation
  */
 class OperationBuilder extends BaseBuilder
@@ -35,7 +36,7 @@ class OperationBuilder extends BaseBuilder
     use Instance;
 
     protected string $subjectClass = Operation::class;
-    
+
     public function addTag(string $tag): OperationBuilder
     {
         $this->subject->tags[] = $tag;

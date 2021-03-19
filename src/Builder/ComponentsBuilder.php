@@ -21,6 +21,16 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 
 /**
  * Class ComponentsBuilder
+ * @method $this schemas(array $schemas);
+ * @method $this responses(array $responses);
+ * @method $this parameters(array $parameters);
+ * @method $this examples(array $examples);
+ * @method $this requestBodies(array $requestBodies);
+ * @method $this headers(array $headers);
+ * @method $this securitySchemes(array $securitySchemes);
+ * @method $this links(array $links);
+ * @method $this callbacks(array $callbacks);
+ * @method Components getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class ComponentsBuilder extends BaseBuilder

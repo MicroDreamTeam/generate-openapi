@@ -14,6 +14,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Responses;
  * Class ResponsesBuilder
  * @method $this default(Response|Reference $default);
  * @method $this httpStatusCode(array $httpStatusCode);
+ * @method Responses getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class ResponsesBuilder extends BaseBuilder

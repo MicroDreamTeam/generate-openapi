@@ -21,7 +21,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
  * @method $this security(SecurityRequirement[] $security);
  * @method $this tags(array $tags);
  * @method $this externalDocs(ExternalDocumentation $externalDocs);
-
+ * @method Root getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class RootBuilder extends BaseBuilder
@@ -30,6 +30,15 @@ class RootBuilder extends BaseBuilder
 
     protected string $subjectClass = Root::class;
 
+    /**
+     * @param Server|ServerBuilder|callable $server The closure will pass a ServerBuilder object
+     * @return $this
+     */
+    public function addServer($server): RootBuilder
+    {
+        $this->subject->servers[] = Common::getServer($server);
+        return $this;
+    }
     /**
      * @param Info|InfoBuilder|callable $info The closure will pass a InfoBuilder object
      * @return $this

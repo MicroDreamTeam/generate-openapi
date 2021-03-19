@@ -14,6 +14,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Info\License;
  * @method $this description(string $description);
  * @method $this termsOfService(string $termsOfService);
  * @method $this version(string $version);
+ * @method Info getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class InfoBuilder extends BaseBuilder

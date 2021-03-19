@@ -9,6 +9,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Info\License;
  * Class LicenseBuilder
  * @method $this name(string $name);
  * @method $this url(string $url);
+ * @method License getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class LicenseBuilder extends BaseBuilder

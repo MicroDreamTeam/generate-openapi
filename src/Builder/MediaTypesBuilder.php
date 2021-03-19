@@ -16,6 +16,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
  * @method $this examples(array $examples);
  * @method $this encoding(array $encoding);
 
+ * @method MediaTypes getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class MediaTypesBuilder extends BaseBuilder

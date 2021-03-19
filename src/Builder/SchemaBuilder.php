@@ -75,7 +75,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method $this else(Schema $else);
  * @method $this contentMediaType(string $contentMediaType);
  * @method $this contentEncoding(string $contentEncoding);
-
+ * @method Schema getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class SchemaBuilder extends BaseBuilder

@@ -14,6 +14,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Response;
  * @method $this headers(array $headers);
  * @method $this content(array $content);
  * @method $this links(array $links);
+ * @method Response getSubject();
  * @package Itwmw\Generate\OpenApi\Builder\Server\Request
  */
 class ResponseBuilder extends BaseBuilder

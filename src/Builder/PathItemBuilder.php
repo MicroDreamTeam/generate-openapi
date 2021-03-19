@@ -29,6 +29,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
  * @method $this servers(Server[] $servers);
  * @method $this parameters(Parameter[]|Reference[] $parameters);
 
+ * @method PathItem getSubject();
  * @package Itwmw\Generate\OpenApi\Builder\Path
  */
 class PathItemBuilder extends BaseBuilder

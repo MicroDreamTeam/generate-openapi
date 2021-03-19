@@ -13,6 +13,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
  * @method $this description(string $description);
  * @method $this content(array $content);
  * @method $this required(bool $required);
+ * @method RequestBody getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class RequestBodyBuilder extends BaseBuilder

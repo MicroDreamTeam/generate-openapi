@@ -11,6 +11,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Path\Paths;
 /**
  * Class PathsBuilder
  * @method $this paths(array $paths);
+ * @method Paths getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class PathsBuilder extends BaseBuilder

@@ -14,6 +14,7 @@ use Itwmw\Generate\OpenApi\Builder\RequestBodyBuilder;
 use Itwmw\Generate\OpenApi\Builder\ResponseBuilder;
 use Itwmw\Generate\OpenApi\Builder\ResponsesBuilder;
 use Itwmw\Generate\OpenApi\Builder\SchemaBuilder;
+use Itwmw\Generate\OpenApi\Builder\ServerBuilder;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Components;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Contact;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Info;
@@ -26,6 +27,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Path\Paths;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Response;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Responses;
+use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
 use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 
 /**
@@ -42,6 +44,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method static Contact     getContact(Contact|ContactBuilder|callable $contact)
  * @method static License     getLicense(License|LicenseBuilder|callable $license)
  * @method static Info        getInfo(Info|InfoBuilder|callable $info)
+ * @method static Server      getServer(Server|ServerBuilder|callable $server)
  * @package Itwmw\Generate\OpenApi\Builder\Common
  */
 class Common
@@ -59,6 +62,7 @@ class Common
         'Contact'     => Contact::class,
         'License'     => License::class,
         'Info'        => Info::class,
+        'Server'      => Server::class,
     ];
     
     public static function __callStatic($name, $arguments)
