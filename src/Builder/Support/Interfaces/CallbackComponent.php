@@ -2,6 +2,6 @@
 
 namespace Itwmw\Generate\OpenApi\Builder\Support\Interfaces;
 
-interface CallbackComponent
+interface CallbackComponent extends BaseComponentType
 {
 }

@@ -2,6 +2,6 @@
 
 namespace Itwmw\Generate\OpenApi\Builder\Support\Interfaces;
 
-interface ExampleComponent
+interface ExampleComponent extends BaseComponentType
 {
 }

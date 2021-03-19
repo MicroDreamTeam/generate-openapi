@@ -2,6 +2,6 @@
 
 namespace Itwmw\Generate\OpenApi\Builder\Support\Interfaces;
 
-interface RequestBodyComponent
+interface RequestBodyComponent extends BaseComponentType
 {
 }

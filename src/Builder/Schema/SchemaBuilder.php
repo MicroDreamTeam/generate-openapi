@@ -45,6 +45,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method $this minimum(?float|null $minimum);
  * @method $this exclusiveMinimum(bool|float $exclusiveMinimum);
  * @method $this maxLength(?int|null $maxLength);
+ * @method $this properties(array $properties);
  * @method $this minLength(?int|null $minLength);
  * @method $this pattern(?string|null $pattern);
  * @method $this additionalItems(bool|Schema $additionalItems);
@@ -98,7 +99,7 @@ class SchemaBuilder
      * @return $this
      * @throws GenerateBuilderException
      */
-    public function properties($name, $schema = null): SchemaBuilder
+    public function addProperties($name, $schema = null): SchemaBuilder
     {
         if (is_string($name)) {
             $this->schema->properties[$name] = Common::getSchema($schema);
@@ -139,9 +140,11 @@ class SchemaBuilder
             return $this;
         }
 
-        if (method_exists(Schema::class, $name) && !empty($arguments)) {
+        if (property_exists(Schema::class, $name) && !empty($arguments)) {
             $this->schema->$name = $arguments[0];
             return $this;
         }
+
+        throw new GenerateBuilderException('Method does not exist or parameter is empty');
     }
 }

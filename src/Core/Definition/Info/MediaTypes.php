@@ -38,7 +38,7 @@ final class MediaTypes implements Arrayable
      * if referencing a schema which contains an example,
      * the examples value SHALL override the example provided by the schema.
      *
-     * Map[ string, Example Object ¦ Reference Object]
+     * Map[ string, {@see Example} ¦ {@see Reference}]
      * @var array
      */
     public array $examples = [];

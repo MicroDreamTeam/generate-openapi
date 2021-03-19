@@ -2,6 +2,6 @@
 
 namespace Itwmw\Generate\OpenApi\Builder\Support\Interfaces;
 
-interface LinkComponent
+interface LinkComponent extends BaseComponentType
 {
 }
