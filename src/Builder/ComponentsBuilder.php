@@ -3,7 +3,7 @@
 namespace Itwmw\Generate\OpenApi\Builder;
 
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Schema\SchemaBuilder;
+use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\BaseComponent;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\CallbackComponent;
@@ -19,16 +19,15 @@ use Itwmw\Generate\OpenApi\Core\Definition\Info\Components;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
 use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 
-class ComponentsBuilder
+/**
+ * Class ComponentsBuilder
+ * @package Itwmw\Generate\OpenApi\Builder
+ */
+class ComponentsBuilder extends BaseBuilder
 {
+    protected string $subjectClass = Components::class;
+
     use Instance;
-
-    protected Components $components;
-
-    public function __construct()
-    {
-        $this->components = new Components();
-    }
 
     /**
      * @param BaseComponent|string $component BaseComponent Object or Class Name
@@ -41,23 +40,23 @@ class ComponentsBuilder
             $component = new $component();
         }
         if (is_subclass_of($component, CallbackComponent::class)) {
-            $this->components->callbacks[$component::getName()] = $component();
+            $this->subject->callbacks[$component::getName()] = $component();
         } elseif (is_subclass_of($component, ExampleComponent::class)) {
-            $this->components->examples[$component::getName()] = $component();
+            $this->subject->examples[$component::getName()] = $component();
         } elseif (is_subclass_of($component, HeaderComponent::class)) {
-            $this->components->headers[$component::getName()] = $component();
+            $this->subject->headers[$component::getName()] = $component();
         } elseif (is_subclass_of($component, LinkComponent::class)) {
-            $this->components->links[$component::getName()] = $component();
+            $this->subject->links[$component::getName()] = $component();
         } elseif (is_subclass_of($component, ParameterComponent::class)) {
-            $this->components->parameters[$component::getName()] = $component();
+            $this->subject->parameters[$component::getName()] = $component();
         } elseif (is_subclass_of($component, RequestBodyComponent::class)) {
-            $this->components->requestBodies[$component::getName()] = $component();
+            $this->subject->requestBodies[$component::getName()] = $component();
         } elseif (is_subclass_of($component, ResponseComponent::class)) {
-            $this->components->responses[$component::getName()] = $component();
+            $this->subject->responses[$component::getName()] = $component();
         } elseif (is_subclass_of($component, SchemaComponent::class)) {
-            $this->components->schemas[$component::getName()] = $component();
+            $this->subject->schemas[$component::getName()] = $component();
         } elseif (is_subclass_of($component, SecuritySchemeComponent::class)) {
-            $this->components->securitySchemes[$component::getName()] = $component();
+            $this->subject->securitySchemes[$component::getName()] = $component();
         } else {
             throw new GenerateBuilderException('Not a valid Component');
         }
@@ -68,16 +67,10 @@ class ComponentsBuilder
      * @param string $name
      * @param callable|SchemaBuilder|Schema $schema The closure will pass a SchemaBuilder object
      * @return $this
-     * @throws GenerateBuilderException
      */
     public function addSchemas(string $name, $schema): ComponentsBuilder
     {
-        $this->components->schemas[$name] = Common::getSchema($schema);
+        $this->subject->schemas[$name] = Common::getSchema($schema);
         return $this;
-    }
-
-    public function getComponents(): Components
-    {
-        return $this->components;
     }
 }

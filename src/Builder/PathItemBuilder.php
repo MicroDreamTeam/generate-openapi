@@ -3,13 +3,13 @@
 namespace Itwmw\Generate\OpenApi\Builder;
 
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
+use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Operation;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Parameter;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\PathItem;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
-use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 
 /**
  * Class PathItemBuilder
@@ -31,46 +31,31 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 
  * @package Itwmw\Generate\OpenApi\Builder\Path
  */
-class PathItemBuilder
+class PathItemBuilder extends BaseBuilder
 {
     use Instance;
 
-    protected PathItem $pathItem;
-
-    public function __construct()
-    {
-        $this->pathItem = new PathItem();
-    }
+    protected string $subjectClass = PathItem::class;
 
     /**
      * @param string $method
-     * @param Operation|OperationBuilder|callable $operation
+     * @param Operation|OperationBuilder|callable $operation  The closure will pass a OperationBuilder object
      * @return $this
-     * @throws GenerateBuilderException
      */
     protected function addMethod(string $method, $operation): PathItemBuilder
     {
-        $operation               = Common::getOperation($operation);
-        $this->pathItem->$method = $operation;
+        $operation              = Common::getOperation($operation);
+        $this->subject->$method = $operation;
         return $this;
-    }
-
-    public function getPathItem(): PathItem
-    {
-        return $this->pathItem;
     }
 
     public function __call($name, $arguments)
     {
-        if (property_exists(PathItem::class, $name) && !empty($arguments)) {
-            $method = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'];
-            if (in_array($name, $method)) {
-                $this->addMethod($name, $arguments[0]);
-                return $this;
-            }
-            $this->pathItem->$name = $arguments[0];
+        $method = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'];
+        if (in_array($name, $method)) {
+            $this->addMethod($name, $arguments[0]);
             return $this;
         }
-        throw new GenerateBuilderException('Method does not exist or parameter is empty');
+        return parent::__call($name, $arguments);
     }
 }

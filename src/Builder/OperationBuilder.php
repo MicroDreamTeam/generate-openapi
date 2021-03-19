@@ -3,6 +3,7 @@
 namespace Itwmw\Generate\OpenApi\Builder;
 
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
+use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\RequestBodyComponent;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
@@ -29,20 +30,15 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method $this servers(Server[] $servers);
  * @package Itwmw\Generate\OpenApi\Builder\Operation
  */
-class OperationBuilder
+class OperationBuilder extends BaseBuilder
 {
     use Instance;
 
-    protected Operation $operation;
-
-    public function __construct()
-    {
-        $this->operation = new Operation();
-    }
-
+    protected string $subjectClass = Operation::class;
+    
     public function addTag(string $tag): OperationBuilder
     {
-        $this->operation->tags[] = $tag;
+        $this->subject->tags[] = $tag;
         return $this;
     }
 
@@ -50,21 +46,20 @@ class OperationBuilder
      * @param RequestBody|callable|Reference|RequestBodyBuilder|RequestBodyComponent $requestBody
      * The closure will pass a RequestBodyBuilder object
      * @return OperationBuilder
-     * @throws GenerateBuilderException
      */
     public function requestBody($requestBody): OperationBuilder
     {
         if (is_subclass_of($requestBody, RequestBodyComponent::class)) {
-            $this->operation->requestBody = $requestBody::getRef();
+            $this->subject->requestBody = $requestBody::getRef();
             return $this;
         }
 
         if ($requestBody instanceof Reference) {
-            $this->operation->requestBody = $requestBody;
+            $this->subject->requestBody = $requestBody;
             return $this;
         }
 
-        $this->operation->requestBody = Common::getRequestBody($requestBody);
+        $this->subject->requestBody = Common::getRequestBody($requestBody);
         return $this;
     }
 
@@ -75,21 +70,7 @@ class OperationBuilder
      */
     public function responses($responses): OperationBuilder
     {
-        $this->operation->responses = Common::getResponses($responses);
+        $this->subject->responses = Common::getResponses($responses);
         return $this;
-    }
-
-    public function getOperation(): Operation
-    {
-        return $this->operation;
-    }
-
-    public function __call($name, $arguments)
-    {
-        if (property_exists(Operation::class, $name) && !empty($arguments)) {
-            $this->operation->$name = $arguments[0];
-            return $this;
-        }
-        throw new GenerateBuilderException('Method does not exist or parameter is empty');
     }
 }

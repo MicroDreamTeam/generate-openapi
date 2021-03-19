@@ -21,17 +21,4 @@ trait ToArray
         }
         return $value;
     }
-
-    public function mergeArraysToObjects(array $data): object
-    {
-        $obj = [];
-        array_map(function ($value) use (&$obj) {
-            if (is_array($value)) {
-                $obj = array_merge($obj, $value);
-            } else {
-                $obj[] = $value;
-            }
-        }, $data);
-        return (object)$obj;
-    }
 }

@@ -5,7 +5,7 @@ namespace Itwmw\Generate\OpenApi\Core\Definition;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Components;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Info;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Path;
+use Itwmw\Generate\OpenApi\Core\Definition\Path\Paths;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
 use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
@@ -19,9 +19,7 @@ use Spyc;
  */
 class Root implements Arrayable
 {
-    use ToArray {
-        toArray as _toArray;
-    }
+    use ToArray;
 
     /**
      * REQUIRED.
@@ -62,9 +60,9 @@ class Root implements Arrayable
 
     /**
      * REQUIRED. The available paths and operations for the API.
-     * @var Path[]
+     * @var Paths
      */
-    public array $paths = [];
+    public Paths $paths;
 
     /**
      * A declaration of which security mechanisms can be used for this operation.
@@ -91,15 +89,6 @@ class Root implements Arrayable
      * @var ExternalDocumentation
      */
     public ExternalDocumentation $externalDocs;
-
-    public function toArray(): array
-    {
-        $data = $this->_toArray();
-        if (!empty($data['paths'])) {
-            $data['paths'] = $this->mergeArraysToObjects($data['paths']);
-        }
-        return $data;
-    }
 
     public function dumpYamlToFile(string $path): bool
     {

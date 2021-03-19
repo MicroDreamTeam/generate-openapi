@@ -5,6 +5,7 @@ namespace Itwmw\Generate\OpenApi\Builder;
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
 use Itwmw\Generate\OpenApi\Builder\Common\DataType;
 use Itwmw\Generate\OpenApi\Builder\Map\MapSchemaBuilder;
+use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\DataTypeContainers;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
@@ -77,21 +78,11 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 
  * @package Itwmw\Generate\OpenApi\Builder
  */
-class SchemaBuilder
+class SchemaBuilder extends BaseBuilder
 {
     use Instance;
-    
-    protected Schema $schema;
 
-    public function __construct()
-    {
-        $this->schema = new Schema();
-    }
-
-    public function getSchema(): Schema
-    {
-        return $this->schema;
-    }
+    protected string $subjectClass = Schema::class;
 
     /**
      * @param string|callable|MapSchemaBuilder $name   The closure will pass a MapSchemaBuilder object
@@ -103,7 +94,7 @@ class SchemaBuilder
     public function addProperties($name, $schema = null): SchemaBuilder
     {
         if (is_string($name)) {
-            $this->schema->properties[$name] = Common::getSchema($schema);
+            $this->subject->properties[$name] = Common::getSchema($schema);
             return $this;
         } elseif (is_callable($name)) {
             $schema = new MapSchemaBuilder();
@@ -114,38 +105,32 @@ class SchemaBuilder
             throw new GenerateBuilderException('Not valid parameters');
         }
 
-        $schema                   = $schema->getSchema();
-        $this->schema->properties = array_merge($this->schema->properties, $schema);
+        $schema                    = $schema->getSchema();
+        $this->subject->properties = array_merge($this->subject->properties, $schema);
         return $this;
     }
 
     /**
      * @param SchemaBuilder|callable|Schema|Reference $items The closure will pass a SchemaBuilder object
      * @return $this
-     * @throws GenerateBuilderException
      */
     public function items($items): SchemaBuilder
     {
         if ($items instanceof Reference) {
-            $this->schema->items = $items;
+            $this->subject->items = $items;
             return $this;
         }
-        $this->schema->items = Common::getSchema($items);
+        $this->subject->items = Common::getSchema($items);
         return $this;
     }
 
     public function __call($name, $arguments)
     {
         if (method_exists(DataType::class, $name)) {
-            $this->schema->type = DataType::$name();
+            $this->subject->type = DataType::$name();
             return $this;
         }
 
-        if (property_exists(Schema::class, $name) && !empty($arguments)) {
-            $this->schema->$name = $arguments[0];
-            return $this;
-        }
-
-        throw new GenerateBuilderException('Method does not exist or parameter is empty');
+        return parent::__call($name, $arguments);
     }
 }
