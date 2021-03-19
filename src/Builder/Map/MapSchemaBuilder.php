@@ -1,8 +1,9 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Schema;
+namespace Itwmw\Generate\OpenApi\Builder\Map;
 
 use Itwmw\Generate\OpenApi\Builder\Common\DataType;
+use Itwmw\Generate\OpenApi\Builder\SchemaBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 

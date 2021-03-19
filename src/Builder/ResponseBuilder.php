@@ -1,9 +1,8 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Server\Request;
+namespace Itwmw\Generate\OpenApi\Builder;
 
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Operation\MediaTypesBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\MediaTypes;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Response;

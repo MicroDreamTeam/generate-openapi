@@ -1,8 +1,7 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Operation;
+namespace Itwmw\Generate\OpenApi\Builder;
 
-use Itwmw\Generate\OpenApi\Builder\Schema\SchemaBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\SchemaComponent;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\MediaTypes;

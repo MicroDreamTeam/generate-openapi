@@ -1,6 +1,6 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Server\Request;
+namespace Itwmw\Generate\OpenApi\Builder;
 
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;

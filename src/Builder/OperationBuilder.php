@@ -1,10 +1,8 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Operation;
+namespace Itwmw\Generate\OpenApi\Builder;
 
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Server\Request\RequestBodyBuilder;
-use Itwmw\Generate\OpenApi\Builder\Server\Request\ResponsesBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\RequestBodyComponent;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;

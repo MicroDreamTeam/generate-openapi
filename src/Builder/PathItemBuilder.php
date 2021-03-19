@@ -1,9 +1,8 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Path;
+namespace Itwmw\Generate\OpenApi\Builder;
 
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Operation\OperationBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Operation;

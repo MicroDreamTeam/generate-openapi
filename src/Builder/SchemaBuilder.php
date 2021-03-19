@@ -1,9 +1,10 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Schema;
+namespace Itwmw\Generate\OpenApi\Builder;
 
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
 use Itwmw\Generate\OpenApi\Builder\Common\DataType;
+use Itwmw\Generate\OpenApi\Builder\Map\MapSchemaBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\DataTypeContainers;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
