@@ -105,7 +105,7 @@ class SchemaBuilder extends BaseBuilder
             throw new GenerateBuilderException('Not valid parameters');
         }
 
-        $schema                    = $schema->getSchema();
+        $schema                    = $schema->getSubject();
         $this->subject->properties = array_merge($this->subject->properties, $schema);
         return $this;
     }

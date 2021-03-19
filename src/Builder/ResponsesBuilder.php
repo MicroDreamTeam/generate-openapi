@@ -36,6 +36,7 @@ class ResponsesBuilder extends BaseBuilder
 
         if ($response instanceof Reference) {
             $this->subject->httpStatusCode[$httpStatusCode] = $response;
+            return $this;
         }
 
         $this->subject->httpStatusCode[$httpStatusCode] = Common::getResponse($response);

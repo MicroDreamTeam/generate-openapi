@@ -32,11 +32,11 @@ class MapSchemaBuilder
     /** @var SchemaBuilder[]  */
     protected array $params;
 
-    public function getSchema(): array
+    public function getSubject(): array
     {
         $_params = $this->params;
         foreach ($_params as $name => &$param) {
-            $param = $param->getSchema();
+            $param = $param->getSubject();
         }
         return $_params;
     }
