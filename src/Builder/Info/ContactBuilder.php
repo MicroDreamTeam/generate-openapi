@@ -3,6 +3,7 @@
 namespace Itwmw\OpenApi\Builder\Info;
 
 use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
 use Itwmw\OpenApi\Core\Definition\Info\Contact;
 
 /**
@@ -15,5 +16,7 @@ use Itwmw\OpenApi\Core\Definition\Info\Contact;
  */
 class ContactBuilder extends BaseBuilder
 {
+    use Instance;
+    
     protected string $subjectClass = Contact::class;
 }

@@ -1,6 +1,6 @@
 {
     "name": "itwmw/generate-openapi",
-    "description": "新版微擎表单验证",
+    "description": "generate openapi data",
     "license": "Apache-2.0",
     "authors": [
         {

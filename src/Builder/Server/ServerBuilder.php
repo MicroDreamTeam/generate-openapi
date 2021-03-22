@@ -3,6 +3,7 @@
 namespace Itwmw\OpenApi\Builder\Server;
 
 use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
 use Itwmw\OpenApi\Core\Definition\Server\Server;
 
 /**
@@ -15,5 +16,7 @@ use Itwmw\OpenApi\Core\Definition\Server\Server;
  */
 class ServerBuilder extends BaseBuilder
 {
+    use Instance;
+
     protected string $subjectClass = Server::class;
 }

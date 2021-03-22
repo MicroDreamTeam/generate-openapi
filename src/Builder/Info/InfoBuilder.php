@@ -4,6 +4,7 @@ namespace Itwmw\OpenApi\Builder\Info;
 
 use Itwmw\OpenApi\Builder\Common\Common;
 use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
 use Itwmw\OpenApi\Core\Definition\Info\Contact;
 use Itwmw\OpenApi\Core\Definition\Info\Info;
 use Itwmw\OpenApi\Core\Definition\Info\License;
@@ -19,6 +20,8 @@ use Itwmw\OpenApi\Core\Definition\Info\License;
  */
 class InfoBuilder extends BaseBuilder
 {
+    use Instance;
+    
     protected string $subjectClass = Info::class;
 
     /**
