@@ -5,8 +5,8 @@ namespace Itwmw\Generate\OpenApi\Builder;
 use Itwmw\Generate\OpenApi\Builder\Common\Common;
 use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
+use Itwmw\Generate\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Components;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Info;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Paths;
 use Itwmw\Generate\OpenApi\Core\Definition\Root;
@@ -20,15 +20,25 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
  * @method $this servers(Server[] $servers);
  * @method $this security(SecurityRequirement[] $security);
  * @method $this tags(array $tags);
- * @method $this externalDocs(ExternalDocumentation $externalDocs);
  * @method Root getSubject();
  * @package Itwmw\Generate\OpenApi\Builder
  */
 class RootBuilder extends BaseBuilder
 {
     use Instance;
+    use SetExternalDocumentation;
 
     protected string $subjectClass = Root::class;
+
+    /**
+     * @param SecurityRequirement|SecurityRequirementBuilder|callable $security The closure will pass a SecurityRequirementBuilder object
+     * @return $this
+     */
+    public function addSecurity($security): RootBuilder
+    {
+        $this->subject->security[] = Common::getSecurityRequirement($security);
+        return $this;
+    }
 
     /**
      * @param Server|ServerBuilder|callable $server The closure will pass a ServerBuilder object
@@ -39,6 +49,13 @@ class RootBuilder extends BaseBuilder
         $this->subject->servers[] = Common::getServer($server);
         return $this;
     }
+
+    public function addTag(string $tag): RootBuilder
+    {
+        $this->subject->tags[] = $tag;
+        return $this;
+    }
+
     /**
      * @param Info|InfoBuilder|callable $info The closure will pass a InfoBuilder object
      * @return $this

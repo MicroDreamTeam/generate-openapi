@@ -7,8 +7,8 @@ use Itwmw\Generate\OpenApi\Builder\Common\DataType;
 use Itwmw\Generate\OpenApi\Builder\Map\MapSchemaBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
+use Itwmw\Generate\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\DataTypeContainers;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Discriminator;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
@@ -36,7 +36,6 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method $this readOnly(bool $readOnly);
  * @method $this writeOnly(bool $writeOnly);
  * @method $this xml(Xml $xml);
- * @method $this externalDocs(ExternalDocumentation $externalDocs);
  * @method $this example(array $example);
  * @method $this deprecated(bool $deprecated);
  * @method $this title(string $title);
@@ -80,7 +79,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  */
 class SchemaBuilder extends BaseBuilder
 {
-    use Instance;
+    use Instance,SetExternalDocumentation;
 
     protected string $subjectClass = Schema::class;
 

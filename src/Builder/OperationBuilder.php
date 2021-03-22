@@ -6,7 +6,7 @@ use Itwmw\Generate\OpenApi\Builder\Common\Common;
 use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\Generate\OpenApi\Builder\Support\Instance;
 use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\RequestBodyComponent;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
+use Itwmw\Generate\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
 use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Operation;
 use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Parameter;
@@ -14,14 +14,12 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Responses;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
 use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
-use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 
 /**
  * Class OperationBuilder
  * @method $this tags(string[] $tags);
  * @method $this summary(string $summary);
  * @method $this description(string $description);
- * @method $this externalDocs(ExternalDocumentation $externalDocs);
  * @method $this operationId(string $operationId);
  * @method $this parameters(Parameter[]|Reference[] $parameters);
  * @method $this callbacks(array $callbacks);
@@ -34,6 +32,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
 class OperationBuilder extends BaseBuilder
 {
     use Instance;
+    use SetExternalDocumentation;
 
     protected string $subjectClass = Operation::class;
 
@@ -67,7 +66,6 @@ class OperationBuilder extends BaseBuilder
     /**
      * @param Responses|ResponsesBuilder|callable $responses The closure will pass a ResponsesBuilder object
      * @return OperationBuilder
-     * @throws GenerateBuilderException
      */
     public function responses($responses): OperationBuilder
     {
