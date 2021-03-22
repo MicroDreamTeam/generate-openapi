@@ -9,7 +9,8 @@ use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
 trait SetExternalDocumentation
 {
     /**
-     * @param ExternalDocumentation|ExternalDocumentationBuilder|callable $externalDocs The closure will pass a ExternalDocumentationBuilder object
+     * @param ExternalDocumentation|ExternalDocumentationBuilder|callable $externalDocs
+     * The closure will pass a ExternalDocumentationBuilder object
      * @return $this
      */
     public function externalDocs($externalDocs)

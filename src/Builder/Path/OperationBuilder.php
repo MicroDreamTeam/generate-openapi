@@ -8,6 +8,8 @@ use Itwmw\OpenApi\Builder\Server\Request\ResponsesBuilder;
 use Itwmw\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\OpenApi\Builder\Support\Instance;
 use Itwmw\OpenApi\Builder\Support\Interfaces\RequestBodyComponent;
+use Itwmw\OpenApi\Builder\Support\Traits\AddParameter;
+use Itwmw\OpenApi\Builder\Support\Traits\AddServer;
 use Itwmw\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
 use Itwmw\OpenApi\Core\Definition\Info\Reference;
 use Itwmw\OpenApi\Core\Definition\Path\Operation;
@@ -34,7 +36,7 @@ use Itwmw\OpenApi\Core\Definition\Server\Server;
 class OperationBuilder extends BaseBuilder
 {
     use Instance;
-    use SetExternalDocumentation;
+    use SetExternalDocumentation,AddParameter,AddServer;
 
     protected string $subjectClass = Operation::class;
 

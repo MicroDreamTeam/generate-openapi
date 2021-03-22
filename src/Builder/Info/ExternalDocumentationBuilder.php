@@ -3,6 +3,7 @@
 namespace Itwmw\OpenApi\Builder\Info;
 
 use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
 use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
 
 /**
@@ -14,5 +15,7 @@ use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
  */
 class ExternalDocumentationBuilder extends BaseBuilder
 {
+    use Instance;
+
     protected string $subjectClass = ExternalDocumentation::class;
 }

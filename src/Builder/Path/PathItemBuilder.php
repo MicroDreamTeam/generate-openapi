@@ -5,6 +5,8 @@ namespace Itwmw\OpenApi\Builder\Path;
 use Itwmw\OpenApi\Builder\Common\Common;
 use Itwmw\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Builder\Support\Traits\AddParameter;
+use Itwmw\OpenApi\Builder\Support\Traits\AddServer;
 use Itwmw\OpenApi\Core\Definition\Info\Reference;
 use Itwmw\OpenApi\Core\Definition\Path\Operation;
 use Itwmw\OpenApi\Core\Definition\Path\Params\Parameter;
@@ -35,6 +37,7 @@ use Itwmw\OpenApi\Core\Definition\Server\Server;
 class PathItemBuilder extends BaseBuilder
 {
     use Instance;
+    use AddParameter,AddServer;
 
     protected string $subjectClass = PathItem::class;
 

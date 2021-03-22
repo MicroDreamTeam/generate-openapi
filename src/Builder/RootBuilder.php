@@ -7,9 +7,9 @@ use Itwmw\OpenApi\Builder\Info\ComponentsBuilder;
 use Itwmw\OpenApi\Builder\Info\InfoBuilder;
 use Itwmw\OpenApi\Builder\Path\PathsBuilder;
 use Itwmw\OpenApi\Builder\Server\Request\SecurityRequirementBuilder;
-use Itwmw\OpenApi\Builder\Server\ServerBuilder;
 use Itwmw\OpenApi\Builder\Support\BaseBuilder;
 use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Builder\Support\Traits\AddServer;
 use Itwmw\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
 use Itwmw\OpenApi\Core\Definition\Info\Components;
 use Itwmw\OpenApi\Core\Definition\Info\Info;
@@ -31,7 +31,7 @@ use Itwmw\OpenApi\Core\Definition\Server\Server;
 class RootBuilder extends BaseBuilder
 {
     use Instance;
-    use SetExternalDocumentation;
+    use SetExternalDocumentation,AddServer;
 
     protected string $subjectClass = Root::class;
 
@@ -42,16 +42,6 @@ class RootBuilder extends BaseBuilder
     public function addSecurity($security): RootBuilder
     {
         $this->subject->security[] = Common::getSecurityRequirement($security);
-        return $this;
-    }
-
-    /**
-     * @param Server|ServerBuilder|callable $server The closure will pass a ServerBuilder object
-     * @return $this
-     */
-    public function addServer($server): RootBuilder
-    {
-        $this->subject->servers[] = Common::getServer($server);
         return $this;
     }
 

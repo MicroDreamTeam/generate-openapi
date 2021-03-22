@@ -35,7 +35,6 @@ use Itwmw\OpenApi\Core\Exception\GenerateBuilderException;
  * @method $this discriminator(Discriminator $discriminator);
  * @method $this readOnly(bool $readOnly);
  * @method $this writeOnly(bool $writeOnly);
- * @method $this xml(Xml $xml);
  * @method $this example(array $example);
  * @method $this deprecated(bool $deprecated);
  * @method $this title(string $title);
@@ -110,7 +109,19 @@ class SchemaBuilder extends BaseBuilder
     }
 
     /**
-     * @param SchemaBuilder|callable|Schema|Reference $items The closure will pass a SchemaBuilder object
+     * @param Xml|XmlBuilder|callable $xml
+     * The closure will pass a XmlBuilder object
+     * @return $this
+     */
+    public function xml($xml): SchemaBuilder
+    {
+        $this->subject->xml = Common::getXml($xml);
+        return $this;
+    }
+
+    /**
+     * @param SchemaBuilder|callable|Schema|Reference $items
+     * The closure will pass a SchemaBuilder object
      * @return $this
      */
     public function items($items): SchemaBuilder
