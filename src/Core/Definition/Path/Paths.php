@@ -1,16 +1,16 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Path;
+namespace Itwmw\OpenApi\Core\Definition\Path;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Server\Server;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * Holds the relative paths to the individual endpoints and their operations.
  * The path is appended to the URL from the {@see Server} Object in order to construct the full URL.
  * The Paths MAY be empty, due to ACL constraints.
- * @package Itwmw\Generate\OpenApi\Core\Definition\Path
+ * @package Itwmw\OpenApi\Core\Definition\Path
  */
 class Paths implements Arrayable
 {

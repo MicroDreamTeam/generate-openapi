@@ -1,22 +1,22 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Path;
+namespace Itwmw\OpenApi\Core\Definition\Path;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Parameter;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Callback;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Responses;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Parameter;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Callback;
+use Itwmw\OpenApi\Core\Definition\Server\Request\RequestBody;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Responses;
+use Itwmw\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
+use Itwmw\OpenApi\Core\Definition\Server\Server;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * Describes a single API operation on a path.
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition\Path
+ * @package Itwmw\OpenApi\Core\Definition\Path
  */
 class Operation implements Arrayable
 {

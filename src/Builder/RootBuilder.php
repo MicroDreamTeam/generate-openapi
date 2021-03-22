@@ -1,17 +1,22 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Components;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Info;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Paths;
-use Itwmw\Generate\OpenApi\Core\Definition\Root;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Info\ComponentsBuilder;
+use Itwmw\OpenApi\Builder\Info\InfoBuilder;
+use Itwmw\OpenApi\Builder\Path\PathsBuilder;
+use Itwmw\OpenApi\Builder\Server\Request\SecurityRequirementBuilder;
+use Itwmw\OpenApi\Builder\Server\ServerBuilder;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
+use Itwmw\OpenApi\Core\Definition\Info\Components;
+use Itwmw\OpenApi\Core\Definition\Info\Info;
+use Itwmw\OpenApi\Core\Definition\Path\Paths;
+use Itwmw\OpenApi\Core\Definition\Root;
+use Itwmw\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
+use Itwmw\OpenApi\Core\Definition\Server\Server;
 
 /**
  * Class RootBuilder
@@ -21,7 +26,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
  * @method $this security(SecurityRequirement[] $security);
  * @method $this tags(array $tags);
  * @method Root getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class RootBuilder extends BaseBuilder
 {

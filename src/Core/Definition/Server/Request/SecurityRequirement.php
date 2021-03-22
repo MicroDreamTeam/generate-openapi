@@ -1,8 +1,8 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Server\Request;
+namespace Itwmw\OpenApi\Core\Definition\Server\Request;
 
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\Arrayable;
 
 /**
  * Lists the required security schemes to execute this operation.
@@ -14,7 +14,7 @@ use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
  * When a list of Security Requirement Objects is defined on the Open API object or Operation Object,
  * only one of Security Requirement Objects in the list needs to be satisfied to authorize the request.
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition\Server\Request
+ * @package Itwmw\OpenApi\Core\Definition\Server\Request
  */
 class SecurityRequirement implements Arrayable
 {

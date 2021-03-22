@@ -1,9 +1,9 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Info;
+namespace Itwmw\OpenApi\Core\Definition\Info;
 
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 class Example implements Arrayable
 {

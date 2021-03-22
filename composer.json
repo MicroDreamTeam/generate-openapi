@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Itwmw\\Generate\\OpenApi\\": "src/"
+            "Itwmw\\OpenApi\\": "src/"
         }
     }
 }

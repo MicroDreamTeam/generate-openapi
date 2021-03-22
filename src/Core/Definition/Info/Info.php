@@ -1,16 +1,16 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Info;
+namespace Itwmw\OpenApi\Core\Definition\Info;
 
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * The object provides metadata about the API.
  * The metadata MAY be used by the clients if needed,
  * and MAY be presented in editing or documentation generation tools for convenience.
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition
+ * @package Itwmw\OpenApi\Core\Definition
  */
 class Info implements Arrayable
 {

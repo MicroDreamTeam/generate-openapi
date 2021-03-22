@@ -1,16 +1,16 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Info;
 
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
 
 /**
  * Class ExternalDocumentationBuilder
  * @method $this description(string $description);
  * @method $this url(string $url);
  * @method ExternalDocumentation getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class ExternalDocumentationBuilder extends BaseBuilder
 {

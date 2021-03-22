@@ -1,6 +1,6 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Support;
+namespace Itwmw\OpenApi\Core\Support;
 
 interface Arrayable
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Path\Params;
+namespace Itwmw\OpenApi\Core\Definition\Path\Params;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Info\DataTypeContainers;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Info\DataTypeContainers;
+use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * The Schema Object allows the definition of input and output data types.
@@ -18,7 +18,7 @@ use Itwmw\Generate\OpenApi\Core\Support\ToArray;
  * and
  * [JSON Schema Validation](https://tools.ietf.org/html/draft-bhutton-json-schema-validation-00).
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition\Server\Request
+ * @package Itwmw\OpenApi\Core\Definition\Server\Request
  */
 class Schema implements Arrayable
 {

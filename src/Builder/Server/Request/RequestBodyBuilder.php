@@ -1,12 +1,13 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Server\Request;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\MediaTypes;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Info\MediaTypesBuilder;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Core\Definition\Info\MediaTypes;
+use Itwmw\OpenApi\Core\Definition\Server\Request\RequestBody;
 
 /**
  * Class RequestBodyBuilder
@@ -14,7 +15,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
  * @method $this content(array $content);
  * @method $this required(bool $required);
  * @method RequestBody getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class RequestBodyBuilder extends BaseBuilder
 {

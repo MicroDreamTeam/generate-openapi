@@ -1,9 +1,9 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Info;
 
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Contact;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Core\Definition\Info\Contact;
 
 /**
  * Class ContactBuilder
@@ -11,7 +11,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Info\Contact;
  * @method $this url(string $url);
  * @method $this email(string $email);
  * @method Contact getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class ContactBuilder extends BaseBuilder
 {

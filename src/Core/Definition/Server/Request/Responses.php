@@ -1,9 +1,9 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Server\Request;
+namespace Itwmw\OpenApi\Core\Definition\Server\Request;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Support\Arrayable;
 
 /**
  * A container for the expected responses of an operation. The container maps a HTTP response code to the expected response.
@@ -14,7 +14,7 @@ use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
  * The `default` MAY be used as a default response object for all HTTP codes that are not covered individually by the specification.
  *
  * The {@see Responses} Object MUST contain at least one response code, and it SHOULD be the response for a successful operation call.
- * @package Itwmw\Generate\OpenApi\Core\Definition\Server\Request
+ * @package Itwmw\OpenApi\Core\Definition\Server\Request
  */
 class Responses implements Arrayable
 {

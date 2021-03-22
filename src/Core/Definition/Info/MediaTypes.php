@@ -1,15 +1,15 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Info;
+namespace Itwmw\OpenApi\Core\Definition\Info;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Encoding;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Schema;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Encoding;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * Each Media Type Object provides schema and examples for the media type identified by its key.
- * @package Itwmw\Generate\OpenApi\Core\Definition\Info
+ * @package Itwmw\OpenApi\Core\Definition\Info
  */
 final class MediaTypes implements Arrayable
 {

@@ -1,23 +1,24 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Info;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\CallbackComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\ExampleComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\HeaderComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\LinkComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\ParameterComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\RequestBodyComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\ResponseComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\SchemaComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\SecuritySchemeComponent;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Components;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
-use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Path\Params\SchemaBuilder;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\BaseComponent;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Builder\Support\Interfaces\CallbackComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\ExampleComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\HeaderComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\LinkComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\ParameterComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\RequestBodyComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\ResponseComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\SchemaComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\SecuritySchemeComponent;
+use Itwmw\OpenApi\Core\Definition\Info\Components;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Schema;
+use Itwmw\OpenApi\Core\Exception\GenerateBuilderException;
 
 /**
  * Class ComponentsBuilder
@@ -31,7 +32,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method $this links(array $links);
  * @method $this callbacks(array $callbacks);
  * @method Components getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class ComponentsBuilder extends BaseBuilder
 {

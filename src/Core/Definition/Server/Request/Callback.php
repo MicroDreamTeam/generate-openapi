@@ -1,9 +1,9 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Server\Request;
+namespace Itwmw\OpenApi\Core\Definition\Server\Request;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Path\PathItem;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Definition\Path\PathItem;
+use Itwmw\OpenApi\Core\Support\Arrayable;
 
 /**
  * A map of possible out-of band callbacks related to the parent operation.
@@ -11,7 +11,7 @@ use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
  * initiated by the API provider and the expected responses.
  * The key value used to identify the callback object is an expression,
  * evaluated at runtime, that identifies a URL to use for the callback operation.
- * @package Itwmw\Generate\OpenApi\Core\Definition\Server\Request
+ * @package Itwmw\OpenApi\Core\Definition\Server\Request
  */
 class Callback implements Arrayable
 {

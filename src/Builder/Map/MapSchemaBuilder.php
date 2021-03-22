@@ -1,11 +1,11 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Map;
+namespace Itwmw\OpenApi\Builder\Map;
 
-use Itwmw\Generate\OpenApi\Builder\Common\DataType;
-use Itwmw\Generate\OpenApi\Builder\SchemaBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
+use Itwmw\OpenApi\Builder\Common\DataType;
+use Itwmw\OpenApi\Builder\Path\Params\SchemaBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Core\Exception\GenerateBuilderException;
 
 /**
  * Class MapSchemaBuilder
@@ -23,7 +23,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method SchemaBuilder dateTime(string $fileName);
  * @method SchemaBuilder password(string $fileName);
  *
- * @package Itwmw\Generate\OpenApi\Builder\Schema
+ * @package Itwmw\OpenApi\Builder\Schema
  */
 class MapSchemaBuilder
 {

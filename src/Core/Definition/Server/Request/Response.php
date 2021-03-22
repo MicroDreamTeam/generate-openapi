@@ -1,15 +1,15 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Server\Request;
+namespace Itwmw\OpenApi\Core\Definition\Server\Request;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Info\MediaTypes;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Info\MediaTypes;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * Describes a single response from an API Operation, including design-time, static links to operations based on the response.
- * @package Itwmw\Generate\OpenApi\Core\Definition\Server\Request
+ * @package Itwmw\OpenApi\Core\Definition\Server\Request
  */
 class Response implements Arrayable
 {

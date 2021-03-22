@@ -1,8 +1,8 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Common;
+namespace Itwmw\OpenApi\Builder\Common;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Info\DataTypeContainers;
+use Itwmw\OpenApi\Core\Definition\Info\DataTypeContainers;
 
 /**
  * Data Types
@@ -19,7 +19,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Info\DataTypeContainers;
  * a format property follow the type definition in the JSON Schema. Tools that do not recognize
  * a specific format MAY default back to the type alone, as if the format is not specified.
  * @see https://tools.ietf.org/html/draft-wright-json-schema-00#section-4.2
- * @package Itwmw\Generate\OpenApi\Core\Definition
+ * @package Itwmw\OpenApi\Core\Definition
  */
 class DataType
 {
@@ -33,14 +33,14 @@ class DataType
     }
 
     public static function array(): DataTypeContainers
-	{
-		return new DataTypeContainers('array');
-	}
+    {
+        return new DataTypeContainers('array');
+    }
 
-	public static function object(): DataTypeContainers
-	{
-		return new DataTypeContainers('object');
-	}
+    public static function object(): DataTypeContainers
+    {
+        return new DataTypeContainers('object');
+    }
 
     /**
      * signed 64 bits (a.k.a long)

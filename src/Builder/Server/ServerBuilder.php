@@ -1,9 +1,9 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Server;
 
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Core\Definition\Server\Server;
 
 /**
  * Class ServerBuilder
@@ -11,7 +11,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
  * @method $this description(string $description);
  * @method $this variables(array $variables);
  * @method Server getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class ServerBuilder extends BaseBuilder
 {

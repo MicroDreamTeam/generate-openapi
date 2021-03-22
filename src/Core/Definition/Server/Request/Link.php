@@ -1,11 +1,11 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Server\Request;
+namespace Itwmw\OpenApi\Core\Definition\Server\Request;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Operation;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Path\Operation;
+use Itwmw\OpenApi\Core\Definition\Server\Server;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * The Link object represents a possible design-time link for a response.
@@ -22,7 +22,7 @@ use Itwmw\Generate\OpenApi\Core\Support\ToArray;
  * In the case of an `operationId`, it MUST be unique and resolved in the scope of the OAS document.
  * Because of the potential for name clashes, the `operationRef` syntax is preferred for specifications with external references.
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition\Server\Request
+ * @package Itwmw\OpenApi\Core\Definition\Server\Request
  */
 class Link implements Arrayable
 {

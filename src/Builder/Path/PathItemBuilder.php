@@ -1,15 +1,15 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Path;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Operation;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Parameter;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\PathItem;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Definition\Path\Operation;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Parameter;
+use Itwmw\OpenApi\Core\Definition\Path\PathItem;
+use Itwmw\OpenApi\Core\Definition\Server\Server;
 
 /**
  * Class PathItemBuilder
@@ -30,7 +30,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
  * @method $this parameters(Parameter[]|Reference[] $parameters);
 
  * @method PathItem getSubject();
- * @package Itwmw\Generate\OpenApi\Builder\Path
+ * @package Itwmw\OpenApi\Builder\Path
  */
 class PathItemBuilder extends BaseBuilder
 {

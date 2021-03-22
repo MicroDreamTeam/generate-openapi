@@ -1,18 +1,18 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Support;
+namespace Itwmw\OpenApi\Builder\Support;
 
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\CallbackComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\ExampleComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\HeaderComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\LinkComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\ParameterComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\RequestBodyComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\ResponseComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\SchemaComponent;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\SecuritySchemeComponent;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
+use Itwmw\OpenApi\Builder\Support\Interfaces\CallbackComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\ExampleComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\HeaderComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\LinkComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\ParameterComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\RequestBodyComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\ResponseComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\SchemaComponent;
+use Itwmw\OpenApi\Builder\Support\Interfaces\SecuritySchemeComponent;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Exception\GenerateBuilderException;
 
 abstract class BaseComponent implements Interfaces\BaseComponent
 {

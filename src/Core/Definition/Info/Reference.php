@@ -1,8 +1,8 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Info;
+namespace Itwmw\OpenApi\Core\Definition\Info;
 
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\Arrayable;
 
 /**
  * A simple object to allow referencing other components in the specification, internally and externally.
@@ -11,7 +11,7 @@ use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
  *
  * For this specification, reference resolution is accomplished as defined by the JSON Reference specification and not by the JSON Schema specification.
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition\Info
+ * @package Itwmw\OpenApi\Core\Definition\Info
  */
 class Reference implements Arrayable
 {

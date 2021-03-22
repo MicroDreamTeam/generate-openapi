@@ -1,10 +1,10 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Support\Traits;
+namespace Itwmw\OpenApi\Builder\Support\Traits;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\ExternalDocumentationBuilder;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Info\ExternalDocumentationBuilder;
+use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
 
 trait SetExternalDocumentation
 {

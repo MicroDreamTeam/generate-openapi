@@ -1,8 +1,8 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Support;
+namespace Itwmw\OpenApi\Builder\Support;
 
-use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
+use Itwmw\OpenApi\Core\Exception\GenerateBuilderException;
 
 class BaseBuilder
 {

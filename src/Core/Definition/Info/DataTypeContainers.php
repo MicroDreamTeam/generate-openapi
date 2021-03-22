@@ -1,6 +1,6 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Info;
+namespace Itwmw\OpenApi\Core\Definition\Info;
 
 class DataTypeContainers
 {

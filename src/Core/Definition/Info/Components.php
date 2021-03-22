@@ -1,16 +1,16 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Info;
+namespace Itwmw\OpenApi\Core\Definition\Info;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Parameter;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Callback;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Link;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Response;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Parameter;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Schema;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Callback;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Link;
+use Itwmw\OpenApi\Core\Definition\Server\Request\RequestBody;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Response;
+use Itwmw\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * Holds a set of reusable objects for different aspects of the OAS.
@@ -19,7 +19,7 @@ use Itwmw\Generate\OpenApi\Core\Support\ToArray;
  * This object MAY be extended with Specification Extensions.
  *
  * All the fixed fields declared above are objects that MUST use keys that match the regular expression: ^[a-zA-Z0-9\.\-_]+$.
- * @package Itwmw\Generate\OpenApi\Core\Definition\Info
+ * @package Itwmw\OpenApi\Core\Definition\Info
  */
 class Components implements Arrayable
 {

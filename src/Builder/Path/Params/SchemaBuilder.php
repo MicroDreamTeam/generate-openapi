@@ -1,19 +1,19 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Path\Params;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Common\DataType;
-use Itwmw\Generate\OpenApi\Builder\Map\MapSchemaBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\DataTypeContainers;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Discriminator;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Xml;
-use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Common\DataType;
+use Itwmw\OpenApi\Builder\Map\MapSchemaBuilder;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Builder\Support\Traits\SetExternalDocumentation;
+use Itwmw\OpenApi\Core\Definition\Info\DataTypeContainers;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Discriminator;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Schema;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Xml;
+use Itwmw\OpenApi\Core\Exception\GenerateBuilderException;
 
 /**
  * Class SchemaBuilder
@@ -75,7 +75,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method $this contentMediaType(string $contentMediaType);
  * @method $this contentEncoding(string $contentEncoding);
  * @method Schema getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class SchemaBuilder extends BaseBuilder
 {

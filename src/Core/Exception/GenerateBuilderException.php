@@ -1,6 +1,6 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Exception;
+namespace Itwmw\OpenApi\Core\Exception;
 
 use Exception;
 

@@ -1,14 +1,15 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Info;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\SchemaComponent;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\MediaTypes;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Path\Params\SchemaBuilder;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Builder\Support\Interfaces\SchemaComponent;
+use Itwmw\OpenApi\Core\Definition\Info\MediaTypes;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Schema;
 
 /**
  * Class MediaTypesBuilder
@@ -17,7 +18,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
  * @method $this encoding(array $encoding);
 
  * @method MediaTypes getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class MediaTypesBuilder extends BaseBuilder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Support;
+namespace Itwmw\OpenApi\Builder\Support;
 
 trait Instance
 {

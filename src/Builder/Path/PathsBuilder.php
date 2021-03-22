@@ -1,18 +1,18 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Path;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\PathItem;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Paths;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Core\Definition\Path\PathItem;
+use Itwmw\OpenApi\Core\Definition\Path\Paths;
 
 /**
  * Class PathsBuilder
  * @method $this paths(array $paths);
  * @method Paths getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class PathsBuilder extends BaseBuilder
 {

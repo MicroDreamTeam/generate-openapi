@@ -1,9 +1,9 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Path\Params;
+namespace Itwmw\OpenApi\Core\Definition\Path\Params;
 
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * When request bodies or response payloads may be one of a number of different schemas,
@@ -17,7 +17,7 @@ use Itwmw\Generate\OpenApi\Core\Support\ToArray;
  *
  * The discriminator object is legal only when using one of the composite keywords oneOf, anyOf, allOf.
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition\Path\Params
+ * @package Itwmw\OpenApi\Core\Definition\Path\Params
  */
 class Discriminator implements Arrayable
 {

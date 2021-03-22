@@ -1,13 +1,13 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Info;
+namespace Itwmw\OpenApi\Core\Definition\Info;
 
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * Allows referencing an external resource for extended documentation.
- * @package Itwmw\Generate\OpenApi\Core\Definition\Info
+ * @package Itwmw\OpenApi\Core\Definition\Info
  */
 class ExternalDocumentation implements Arrayable
 {

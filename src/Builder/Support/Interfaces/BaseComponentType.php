@@ -1,8 +1,8 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Support\Interfaces;
+namespace Itwmw\OpenApi\Builder\Support\Interfaces;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
 
 interface BaseComponentType
 {

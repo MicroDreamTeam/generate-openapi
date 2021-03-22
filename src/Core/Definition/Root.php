@@ -1,21 +1,21 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition;
+namespace Itwmw\OpenApi\Core\Definition;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Components;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Info;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Paths;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Info\Components;
+use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
+use Itwmw\OpenApi\Core\Definition\Info\Info;
+use Itwmw\OpenApi\Core\Definition\Path\Paths;
+use Itwmw\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
+use Itwmw\OpenApi\Core\Definition\Server\Server;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 use Spyc;
 
 /**
  * This is the root document object
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition
+ * @package Itwmw\OpenApi\Core\Definition
  */
 class Root implements Arrayable
 {

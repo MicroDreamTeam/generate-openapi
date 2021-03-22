@@ -1,10 +1,10 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Path\Params;
+namespace Itwmw\OpenApi\Core\Definition\Path\Params;
 
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * Describes a single operation parameter.
@@ -19,7 +19,7 @@ use Itwmw\Generate\OpenApi\Core\Support\ToArray;
  * [\[RFC7230\]](https://httpwg.org/specs/rfc7230.html) states header names are case insensitive.
  * - cookie - Used to pass a specific cookie value to the API.
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition\Path
+ * @package Itwmw\OpenApi\Core\Definition\Path
  */
 class Parameter implements Arrayable
 {

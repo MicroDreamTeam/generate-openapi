@@ -1,9 +1,9 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Path\Params;
+namespace Itwmw\OpenApi\Core\Definition\Path\Params;
 
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * A metadata object that allows for more fine-tuned XML model definitions.
@@ -12,7 +12,7 @@ use Itwmw\Generate\OpenApi\Core\Support\ToArray;
  *
  * This object MAY be extended with Specification Extensions.
  *
- * @package Itwmw\Generate\OpenApi\Core\Definition\Path\Params
+ * @package Itwmw\OpenApi\Core\Definition\Path\Params
  */
 class Xml implements Arrayable
 {

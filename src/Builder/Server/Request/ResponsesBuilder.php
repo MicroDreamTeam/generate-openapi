@@ -1,21 +1,21 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Server\Request;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Builder\Support\Instance;
-use Itwmw\Generate\OpenApi\Builder\Support\Interfaces\ResponseComponent;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Reference;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Response;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Responses;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Builder\Support\Instance;
+use Itwmw\OpenApi\Builder\Support\Interfaces\ResponseComponent;
+use Itwmw\OpenApi\Core\Definition\Info\Reference;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Response;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Responses;
 
 /**
  * Class ResponsesBuilder
  * @method $this default(Response|Reference $default);
  * @method $this httpStatusCode(array $httpStatusCode);
  * @method Responses getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class ResponsesBuilder extends BaseBuilder
 {

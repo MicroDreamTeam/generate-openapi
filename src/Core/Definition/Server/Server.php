@@ -1,13 +1,13 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Core\Definition\Server;
+namespace Itwmw\OpenApi\Core\Definition\Server;
 
-use Itwmw\Generate\OpenApi\Core\Support\Arrayable;
-use Itwmw\Generate\OpenApi\Core\Support\ToArray;
+use Itwmw\OpenApi\Core\Support\Arrayable;
+use Itwmw\OpenApi\Core\Support\ToArray;
 
 /**
  * An object representing a Server.
- * @package Itwmw\Generate\OpenApi\Core\Definition\Server
+ * @package Itwmw\OpenApi\Core\Definition\Server
  */
 class Server implements Arrayable
 {

@@ -1,38 +1,38 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder\Common;
+namespace Itwmw\OpenApi\Builder\Common;
 
-use Itwmw\Generate\OpenApi\Builder\ComponentsBuilder;
-use Itwmw\Generate\OpenApi\Builder\ContactBuilder;
-use Itwmw\Generate\OpenApi\Builder\ExternalDocumentationBuilder;
-use Itwmw\Generate\OpenApi\Builder\InfoBuilder;
-use Itwmw\Generate\OpenApi\Builder\LicenseBuilder;
-use Itwmw\Generate\OpenApi\Builder\MediaTypesBuilder;
-use Itwmw\Generate\OpenApi\Builder\OperationBuilder;
-use Itwmw\Generate\OpenApi\Builder\PathItemBuilder;
-use Itwmw\Generate\OpenApi\Builder\PathsBuilder;
-use Itwmw\Generate\OpenApi\Builder\RequestBodyBuilder;
-use Itwmw\Generate\OpenApi\Builder\ResponseBuilder;
-use Itwmw\Generate\OpenApi\Builder\ResponsesBuilder;
-use Itwmw\Generate\OpenApi\Builder\SchemaBuilder;
-use Itwmw\Generate\OpenApi\Builder\SecurityRequirementBuilder;
-use Itwmw\Generate\OpenApi\Builder\ServerBuilder;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Components;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Contact;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\ExternalDocumentation;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Info;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\License;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\MediaTypes;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Operation;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Params\Schema;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\PathItem;
-use Itwmw\Generate\OpenApi\Core\Definition\Path\Paths;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\RequestBody;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Response;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\Responses;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
-use Itwmw\Generate\OpenApi\Core\Definition\Server\Server;
-use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
+use Itwmw\OpenApi\Builder\Info\ComponentsBuilder;
+use Itwmw\OpenApi\Builder\Info\ContactBuilder;
+use Itwmw\OpenApi\Builder\Info\ExternalDocumentationBuilder;
+use Itwmw\OpenApi\Builder\Info\InfoBuilder;
+use Itwmw\OpenApi\Builder\Info\LicenseBuilder;
+use Itwmw\OpenApi\Builder\Info\MediaTypesBuilder;
+use Itwmw\OpenApi\Builder\Path\OperationBuilder;
+use Itwmw\OpenApi\Builder\Path\Params\SchemaBuilder;
+use Itwmw\OpenApi\Builder\Path\PathItemBuilder;
+use Itwmw\OpenApi\Builder\Path\PathsBuilder;
+use Itwmw\OpenApi\Builder\Server\Request\RequestBodyBuilder;
+use Itwmw\OpenApi\Builder\Server\Request\ResponseBuilder;
+use Itwmw\OpenApi\Builder\Server\Request\ResponsesBuilder;
+use Itwmw\OpenApi\Builder\Server\Request\SecurityRequirementBuilder;
+use Itwmw\OpenApi\Builder\Server\ServerBuilder;
+use Itwmw\OpenApi\Core\Definition\Info\Components;
+use Itwmw\OpenApi\Core\Definition\Info\Contact;
+use Itwmw\OpenApi\Core\Definition\Info\ExternalDocumentation;
+use Itwmw\OpenApi\Core\Definition\Info\Info;
+use Itwmw\OpenApi\Core\Definition\Info\License;
+use Itwmw\OpenApi\Core\Definition\Info\MediaTypes;
+use Itwmw\OpenApi\Core\Definition\Path\Operation;
+use Itwmw\OpenApi\Core\Definition\Path\Params\Schema;
+use Itwmw\OpenApi\Core\Definition\Path\PathItem;
+use Itwmw\OpenApi\Core\Definition\Path\Paths;
+use Itwmw\OpenApi\Core\Definition\Server\Request\RequestBody;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Response;
+use Itwmw\OpenApi\Core\Definition\Server\Request\Responses;
+use Itwmw\OpenApi\Core\Definition\Server\Request\SecurityRequirement;
+use Itwmw\OpenApi\Core\Definition\Server\Server;
+use Itwmw\OpenApi\Core\Exception\GenerateBuilderException;
 
 /**
  * Class Common
@@ -51,7 +51,7 @@ use Itwmw\Generate\OpenApi\Core\Exception\GenerateBuilderException;
  * @method static Server                getServer(Server|ServerBuilder|callable $server)
  * @method static ExternalDocumentation getExternalDocumentation(ExternalDocumentation|ExternalDocumentationBuilder|callable $externalDocumentation)
  * @method static SecurityRequirement   getSecurityRequirement(SecurityRequirement|SecurityRequirementBuilder|callable $securityRequirement)
- * @package Itwmw\Generate\OpenApi\Builder\Common
+ * @package Itwmw\OpenApi\Builder\Common
  */
 class Common
 {
@@ -80,10 +80,13 @@ class Common
         if (empty($arguments)) {
             throw new GenerateBuilderException('Not valid ' . $subject);
         }
+        if (!isset(self::$subjectClassMap[$subject])) {
+            throw new GenerateBuilderException('Call to undefined method ' . $subject . '()');
+        }
         $subjectObject = $arguments[0];
 
-        $subjectBuilderClass = 'Itwmw\Generate\OpenApi\Builder\\' . $subject . 'Builder';
-
+        $subjectClass        = self::$subjectClassMap[$subject];
+        $subjectBuilderClass = str_replace('Core\Definition', 'Builder', $subjectClass) . 'Builder';
         if ($subjectObject instanceof self::$subjectClassMap[$subject]) {
             return $subjectObject;
         }

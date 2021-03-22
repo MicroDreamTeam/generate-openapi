@@ -1,12 +1,12 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi\Builder;
+namespace Itwmw\OpenApi\Builder\Info;
 
-use Itwmw\Generate\OpenApi\Builder\Common\Common;
-use Itwmw\Generate\OpenApi\Builder\Support\BaseBuilder;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Contact;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\Info;
-use Itwmw\Generate\OpenApi\Core\Definition\Info\License;
+use Itwmw\OpenApi\Builder\Common\Common;
+use Itwmw\OpenApi\Builder\Support\BaseBuilder;
+use Itwmw\OpenApi\Core\Definition\Info\Contact;
+use Itwmw\OpenApi\Core\Definition\Info\Info;
+use Itwmw\OpenApi\Core\Definition\Info\License;
 
 /**
  * Class InfoBuilder
@@ -15,7 +15,7 @@ use Itwmw\Generate\OpenApi\Core\Definition\Info\License;
  * @method $this termsOfService(string $termsOfService);
  * @method $this version(string $version);
  * @method Info getSubject();
- * @package Itwmw\Generate\OpenApi\Builder
+ * @package Itwmw\OpenApi\Builder
  */
 class InfoBuilder extends BaseBuilder
 {

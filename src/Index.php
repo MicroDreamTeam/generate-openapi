@@ -1,6 +1,6 @@
 <?php
 
-namespace Itwmw\Generate\OpenApi;
+namespace Itwmw\OpenApi;
 
 class Index
 {
